@@ -4,6 +4,6 @@
 class PNGExporter
 {
 public:
-    static void Export(const std::string& outFileLoc, size_t width, size_t height, const std::vector<float>& pixelData);
+    static void Export(const std::string& outFileLoc, unsigned int width, unsigned int height, const std::vector<float>& pixelData);
 };
 

@@ -13,8 +13,6 @@ void OpenGLView::Render()
 
     glClear(GL_COLOR_BUFFER_BIT);
 
-    // glDrawPixels(width, height, GL_RGBA, GL_FLOAT, pixelData);
-
     glUseProgram(shaderProgram);
     glBindVertexArray(quadVAO);
     glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
@@ -27,7 +25,7 @@ void OpenGLView::SetUpWindow(GLuint width, GLuint height)
     if (!glfwInit())
         throw std::runtime_error("GLFW could not be initialized.");
 
-    window = glfwCreateWindow(width, height, "OpenCL Render", NULL, NULL);
+    window = glfwCreateWindow(width, height, "OpenGL Raytracer", NULL, NULL);
 
     if (!window)
     {

@@ -1,27 +1,26 @@
 #pragma once
-#include "HitRecord.hpp"
 #include "Material.hpp"
-#include "Ray3D.hpp"
+#include <glad/glad.h>
 
-class ObjectData
+struct ObjectData
 {
-public:
-    enum class PrimativeType : uint8_t {
+    enum class PrimativeType : GLuint {
         sphere,
         box
     };
 
-public:
-    ObjectData(PrimativeType type, Material& mat, glm::mat4 mv);
-
-    void Raycast(Ray3D ray, HitRecord& hit) const;
+    ObjectData(PrimativeType type, Material& mat, glm::mat4 mv) :
+        mat(mat),
+        mv(mv),
+        mvInverse(glm::inverse(mv)),
+        mvInverseTranspose(glm::transpose(mvInverse)),
+        type(type)
+    {
+    }
 
     Material mat;
     glm::mat4 mv, mvInverse, mvInverseTranspose;
     PrimativeType type;
 
-private:
-    inline void RaycastSphere(Ray3D& ray, HitRecord& hit) const;
-    inline void RaycastBox(Ray3D& ray, HitRecord& hit) const;
 };
 

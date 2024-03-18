@@ -3,8 +3,6 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include <CL/cl.h>
-
 #include <vector>
 #include <string>
 #include "OpenGLModel.h"

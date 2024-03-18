@@ -364,6 +364,8 @@ FodyWeavers.xsd
 
 renders/
 *.ppm
+*.png
+!examples/*.png
 
 # VCPKG
 vcpkg_installed/

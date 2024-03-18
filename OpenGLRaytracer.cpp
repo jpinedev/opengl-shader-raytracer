@@ -6,26 +6,15 @@
 #include <fstream>
 #include <iostream>
 
-#include "Ray3D.hpp"
 #include "Light.hpp"
 #include "ObjectData.hpp"
 #include "OpenGLView.hpp"
 #include "PNGExporter.h"
 #include "SceneLoader.hpp"
 
-Ray3D screenSpaceToViewSpace(float width, float height, glm::vec2 pos, float angle) {
-    float halfWidth = width / 2.0f;
-    float halfHeight = height / 2.0f;
-    float aspect = width / height;
-
-    Ray3D out = Ray3D(glm::vec3(0, 0, 0), glm::vec3(pos.x - halfWidth, pos.y - halfHeight,
-        -(halfHeight / tan(angle))));
-    return out;
-}
-
 int main(int argc, char** argv) {
     // TODO: add flags for setting these vars
-    GLuint width = 2560, height = 1440;
+    GLuint width = 1920, height = 1080;
     float fov = glm::radians(60.f);
     fov *= 0.5f;
     // TODO: add flag for output file

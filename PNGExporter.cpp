@@ -2,7 +2,7 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/utils/logger.hpp>
 
-void PNGExporter::Export(const std::string& outFileLoc, size_t width, size_t height, const std::vector<float>& pixelData)
+void PNGExporter::Export(const std::string& outFileLoc, unsigned int width, unsigned int height, const std::vector<float>& pixelData)
 {
     std::vector<unsigned char> pixelsUnsigned(pixelData.size());
     for (size_t i = 0; i < pixelData.size(); ++i) {
